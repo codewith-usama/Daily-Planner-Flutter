@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:daily_planner/onboarding/content_model.dart';
-
-import '../screens/signup_screen.dart';
+import '../auth/auth_page.dart';
+import '../components/build_dot.dart';
 
 class Onbording extends StatefulWidget {
   const Onbording({super.key});
@@ -24,6 +24,9 @@ class OnbordingState extends State<Onbording> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    double fontSize = mediaQuery.size.width;
+    double circleavatarSize = mediaQuery.size.width;
     return Scaffold(
         backgroundColor: const Color(0xFFEC9665),
         body: Column(
@@ -39,23 +42,26 @@ class OnbordingState extends State<Onbording> {
                 itemCount: contents.length,
                 itemBuilder: (_, i) {
                   return Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                      vertical: 15.0,
+                    ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
                           backgroundImage: AssetImage(contents[i].image),
-                          radius: 120.0,
+                          radius: circleavatarSize * 0.30,
                         ),
-                        const SizedBox(
-                          height: 30.0,
+                        SizedBox(
+                          height: mediaQuery.size.height * 0.04,
                         ),
                         Text(
                           contents[i].description,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: Colors.white,
-                            fontSize: 28.0,
+                            fontSize: fontSize * 0.06,
                           ),
                         )
                       ],
@@ -68,7 +74,7 @@ class OnbordingState extends State<Onbording> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                 contents.length,
-                (index) => buildDot(index, context),
+                (index) => buildDot(index, currentIndex, context),
               ),
             ),
             Padding(
@@ -79,40 +85,30 @@ class OnbordingState extends State<Onbording> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const SignupScreen(),
+                        builder: (context) => const AuthPage(),
                       ),
                     );
                   }
                   _pageController.nextPage(
-                    duration: const Duration(milliseconds: 100),
-                    curve: Curves.bounceIn,
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.ease,
                   );
                 },
-                child: const Text(
+                child: Text(
                   "Get Started",
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 32.0,
+                    fontSize: fontSize * 0.08,
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 30.0,
+            SizedBox(
+              height: mediaQuery.size.height * 0.04,
             )
           ],
         ));
   }
 
-  Container buildDot(int index, BuildContext context) {
-    return Container(
-      height: 20.0,
-      width: 20.0,
-      margin: const EdgeInsets.only(left: 35.0, right: 35.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
-        color: currentIndex == index ? const Color(0xFF7B3400) : Colors.white,
-      ),
-    );
-  }
+  
 }

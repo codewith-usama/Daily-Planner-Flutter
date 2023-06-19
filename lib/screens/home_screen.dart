@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../utils/config.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFFD9D9D9),
+        backgroundColor: homeScreenBackgroundColor,
         body: SingleChildScrollView(
           child: SafeArea(
             child: Padding(

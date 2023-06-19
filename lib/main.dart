@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'auth/auth.dart';
+import 'onboarding/onboarding.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const AuthPage(),
+      home: const Onbording(),
     );
   }
 }

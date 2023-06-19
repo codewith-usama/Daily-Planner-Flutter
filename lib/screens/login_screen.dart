@@ -4,6 +4,7 @@ import 'package:daily_planner/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import '../components/remember_me_check_box.dart';
 import '../components/text_field_auth.dart';
+import '../utils/config.dart';
 import 'choose_account_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,170 +17,174 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    double fontSize = mediaQuery.size.width;
     return Scaffold(
-      backgroundColor: const Color(0xFFEC9665),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 45.0,
-              horizontal: 45.0,
-            ),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 50.0,
+      backgroundColor: onBoardingColor,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: mediaQuery.size.height * 0.01,
+            horizontal: mediaQuery.size.width * 0.08,
+          ),
+          child: Column(
+            children: [
+              SizedBox(
+                height: mediaQuery.size.height * 0.01,
+              ),
+              Text(
+                'Log In',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: fontSize * 0.12,
                 ),
-                const Text(
-                  'Log In',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 36.0,
+              ),
+              SizedBox(
+                height: mediaQuery.size.height * 0.04,
+              ),
+              const TextFieldAuth(
+                text: 'E-mail',
+              ),
+              SizedBox(
+                height: mediaQuery.size.height * 0.03,
+              ),
+              const TextFieldAuth(
+                text: 'Password',
+              ),
+              const RememberMeCheckBox(),
+              SizedBox(
+                height: mediaQuery.size.height * 0.03,
+              ),
+              AuthButton(
+                text: 'Log In',
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
+                    ),
+                  );
+                },
+                height: mediaQuery.size.height * 0.10,
+                width: mediaQuery.size.width * 0.80,
+                backgroundColor: const Color(0xFF7B3400),
+                textColor: Colors.white,
+              ),
+              SizedBox(
+                height: mediaQuery.size.height * 0.03,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: mediaQuery.size.width * 0.25,
+                    height: 2.0,
+                    color: const Color(0xFFD9D9D9),
                   ),
+                  Text(
+                    '  OR  ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontSize * 0.07,
+                    ),
+                  ), // Add some spacing between the line and icons
+                  Container(
+                    width: mediaQuery.size.width * 0.25,
+                    height: 2.0,
+                    color: const Color(0xFFD9D9D9),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: mediaQuery.size.width * 0.001,
+              ),
+              Text(
+                'continue with',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: fontSize * 0.06,
                 ),
-                const SizedBox(
-                  height: 60.0,
-                ),
-                const TextFieldAuth(
-                  text: 'E-mail',
-                ),
-                const SizedBox(
-                  height: 30.0,
-                ),
-                const TextFieldAuth(
-                  text: 'Password',
-                ),
-                const RememberMeCheckBox(),
-                const SizedBox(
-                  height: 100.0,
-                ),
-                AuthButton(
-                  text: 'Log In',
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
-                    );
-                  },
-                  height: 70.0,
-                  width: 280.0,
-                  backgroundColor: const Color(0xFF7B3400),
-                  textColor: Colors.white,
-                ),
-                const SizedBox(
-                  height: 40.0,
-                ),
-                Row(
+              ),
+              Center(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 130.0,
-                      height: 2.0,
-                      color: const Color(0xFFD9D9D9),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ChooseAccountScreen(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.facebook,
+                        size: mediaQuery.size.width * 0.12,
+                        color: const Color(0xFF7B3400),
+                      ),
                     ),
-                    const Text(
-                      '  OR  ',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25.0,
-                      ),
-                    ), // Add some spacing between the line and icons
-                    Container(
-                      width: 130.0,
-                      height: 2.0,
-                      color: const Color(0xFFD9D9D9),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                const Text(
-                  'continue with',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25.0,
-                  ),
-                ),
-                Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ChooseAccountScreen(),
-                            ),
-                          );
-                        },
-                        child: const Icon(
-                          Icons.facebook,
-                          size: 70.0,
-                          color: Color(0xFF7B3400),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ChooseAccountScreen(),
-                            ),
-                          );
-                        },
-                        child: const Icon(
-                          Icons.g_mobiledata,
-                          size: 105.0,
-                          color: Color(0xFF7B3400),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 60.0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Don't have an account",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.0,
-                      ),
+                    const SizedBox(
+                      width: 10.0,
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SignupScreen(),
+                            builder: (context) => const ChooseAccountScreen(),
                           ),
                         );
                       },
-                      child: const Text(
-                        'Sign up now',
-                        style: TextStyle(
-                          color: Color(0xFF7B3400),
-                          fontSize: 18.0,
-                        ),
+                      child: Icon(
+                        Icons.g_mobiledata,
+                        size: mediaQuery.size.width * 0.21,
+                        color: const Color(0xFF7B3400),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 20.0,
-                ),
-              ],
-            ),
+              ),
+              // SizedBox(
+              //   height: mediaQuery.size.height * 0.02,
+              // ),
+              const Expanded(
+                flex: 1,
+                child: Text(""),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: fontSize * 0.05,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignupScreen(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      'Sign up now',
+                      style: TextStyle(
+                        color: const Color(0xFF7B3400),
+                        fontSize: fontSize * 0.05,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: mediaQuery.size.height * 0.01,
+              ),
+            ],
           ),
         ),
       ),
