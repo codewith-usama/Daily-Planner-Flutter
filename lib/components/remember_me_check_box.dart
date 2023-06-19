@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class RememberMeCheckBox extends StatefulWidget {
-  const RememberMeCheckBox({super.key});
+  const RememberMeCheckBox({
+    required this.rememberMeMessage,
+    super.key,
+  });
+  final String rememberMeMessage;
 
   @override
   State<RememberMeCheckBox> createState() => _RememberMeCheckBoxState();
@@ -26,9 +30,9 @@ class _RememberMeCheckBoxState extends State<RememberMeCheckBox> {
             });
           },
         ),
-        const Text(
-          'Remember Me',
-          style: TextStyle(
+        Text(
+          widget.rememberMeMessage,
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),

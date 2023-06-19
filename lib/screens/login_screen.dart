@@ -51,7 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
               const TextFieldAuth(
                 text: 'Password',
               ),
-              const RememberMeCheckBox(),
+              const RememberMeCheckBox(
+                rememberMeMessage: 'Remember me',
+              ),
               SizedBox(
                 height: mediaQuery.size.height * 0.03,
               ),
