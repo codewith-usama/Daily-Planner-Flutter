@@ -1,11 +1,11 @@
 import 'package:daily_planner/components/auth_button.dart';
-import 'package:daily_planner/screens/home_screen.dart';
 import 'package:daily_planner/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import '../components/remember_me_check_box.dart';
 import '../components/text_field_auth.dart';
 import '../utils/config.dart';
 import 'choose_account_screen.dart';
+import 'home_page.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
+                      builder: (context) => const HomePage(),
                     ),
                   );
                 },

@@ -1,10 +1,10 @@
 import 'package:daily_planner/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:daily_planner/components/auth_button.dart';
-import 'package:daily_planner/screens/home_screen.dart';
 import '../components/text_field_auth.dart';
 import '../utils/config.dart';
 import 'choose_account_screen.dart';
+import 'home_page.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -63,12 +63,12 @@ class _SignupScreenState extends State<SignupScreen> {
                 height: mediaQuery.size.height * 0.025,
               ),
               AuthButton(
-                text: 'Log In',
+                text: 'Sign Up',
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
+                      builder: (context) => const HomePage(),
                     ),
                   );
                 },
