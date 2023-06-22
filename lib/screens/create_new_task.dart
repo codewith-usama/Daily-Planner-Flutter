@@ -1,7 +1,6 @@
 import 'package:daily_planner/components/auth_button.dart';
 import 'package:daily_planner/components/success.dart';
 import 'package:flutter/material.dart';
-
 import '../utils/config.dart';
 
 class CreateNewTask extends StatefulWidget {
@@ -206,14 +205,16 @@ class _CreateNewTaskState extends State<CreateNewTask> {
                       const SizedBox(
                         height: 10.0,
                       ),
-                      const TextField(
+                      TextField(
                         maxLines: 5,
                         keyboardType: TextInputType.multiline,
                         decoration: InputDecoration(
-                          fillColor: Color(0xFFBCC5BA),
+                          fillColor: const Color(0xFFBCC5BA),
                           filled: true,
                           hintText: 'Enter text',
-                          border: OutlineInputBorder(),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
                         ),
                       ),
                       const Spacer(),

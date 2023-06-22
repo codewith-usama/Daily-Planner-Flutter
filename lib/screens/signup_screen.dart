@@ -94,7 +94,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       color: Colors.white,
                       fontSize: fontSize * 0.07,
                     ),
-                  ), // Add some spacing between the line and icons
+                  ),
                   Container(
                     width: mediaQuery.size.width * 0.25,
                     height: 2.0,

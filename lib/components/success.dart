@@ -2,7 +2,6 @@ import 'package:daily_planner/components/auth_button.dart';
 import 'package:daily_planner/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-
 import '../utils/config.dart';
 
 class Success extends StatefulWidget {

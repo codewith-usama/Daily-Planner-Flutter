@@ -53,72 +53,57 @@ class _ProfilePageState extends State<ProfilePage> {
                   const SizedBox(
                     width: 10.0,
                   ),
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Name\nZara khan',
-                            style: TextStyle(
-                              fontSize: mediaQuery.size.width * 0.04,
-                            ),
+                  const Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Name',
+                        hintStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        suffixIcon: Icon(
+                          Icons.create,
+                          color: Colors.black,
+                          size: 20.0,
+                        ),
+                        border: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.grey,
                           ),
-                          SizedBox(
-                            width: mediaQuery.size.width * 0.20,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blue,
                           ),
-                          const Icon(
-                            Icons.create,
-                            size: 18.0,
-                          )
-                        ],
+                        ),
                       ),
-                      const SizedBox(
-                        height: 2.0,
-                      ),
-                      Container(
-                        color: Colors.black,
-                        height: 1.2,
-                        width: mediaQuery.size.width * 0.42,
-                      )
-                    ],
+                    ),
                   ),
                 ],
               ),
               const SizedBox(
                 height: 10.0,
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: mediaQuery.size.width * 0.03,
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          'E-mail\nzarakhan@gmail.com',
-                          style: TextStyle(
-                            fontSize: mediaQuery.size.width * 0.04,
-                          ),
-                        ),
-                        SizedBox(
-                          width: mediaQuery.size.width * 0.22,
-                        ),
-                        const Icon(
-                          Icons.create,
-                          size: 18.0,
-                        )
-                      ],
+              const TextField(
+                decoration: InputDecoration(
+                  hintText: 'E-mail',
+                  hintStyle: TextStyle(
+                    color: Colors.black,
+                  ),
+                  suffixIcon: Icon(
+                    Icons.create,
+                    color: Colors.black,
+                    size: 20.0,
+                  ),
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey,
                     ),
-                    const SizedBox(
-                      height: 2.0,
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blue,
                     ),
-                    Container(
-                      color: Colors.black,
-                      height: 1.2,
-                      width: double.maxFinite,
-                    )
-                  ],
+                  ),
                 ),
               ),
               SizedBox(

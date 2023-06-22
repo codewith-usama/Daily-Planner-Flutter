@@ -308,7 +308,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   imagePath: 'assets/plant_4.png',
                                   fontSize: fontSize * 0.05,
                                   horizontalPaddingValue:
-                                      mediaQuery.size.width * 0.05,
+                                      mediaQuery.size.width * 0.07,
                                 ),
                               ],
                             ),

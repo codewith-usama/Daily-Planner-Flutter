@@ -1,6 +1,5 @@
 import 'package:daily_planner/components/success.dart';
 import 'package:flutter/material.dart';
-
 import '../utils/config.dart';
 
 class DailyRemainder extends StatefulWidget {
@@ -11,7 +10,7 @@ class DailyRemainder extends StatefulWidget {
 }
 
 class _DailyRemainderState extends State<DailyRemainder> {
-  String _selectedOption = 'Select';
+  String? _selectedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,7 @@ class _DailyRemainderState extends State<DailyRemainder> {
       body: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: mediaQuery.size.width * 0.15,
-          vertical: mediaQuery.size.height * 0.07,
+          vertical: mediaQuery.size.height * 0.05,
         ),
         child: Column(
           children: [
@@ -54,33 +53,39 @@ class _DailyRemainderState extends State<DailyRemainder> {
             const SizedBox(
               height: 20.0,
             ),
-            DropdownButton<String>(
-              value: _selectedOption,
-              icon: const Icon(Icons.arrow_downward_rounded),
-              iconSize: 24,
-              elevation: 16,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 16,
+            Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFFA1BFB2),
+                borderRadius: BorderRadius.circular(8.0),
               ),
-              onChanged: (String? newValue) {
-                setState(() {
-                  _selectedOption = newValue!;
-                });
-              },
-              items: <String>[
-                'Select',
-                'Stay Hydrated',
-                'Respect Everyone',
-                'Think positive',
-                'Eat healthy',
-                'Prioritize yourself',
-              ].map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: DropdownButton<String>(
+                value: _selectedItem,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    _selectedItem = newValue;
+                  });
+                },
+                underline: const SizedBox(),
+                icon: const Icon(
+                  Icons.arrow_drop_down,
+                ),
+                iconSize: 24.0,
+                isExpanded: true,
+                hint: const Text('Select'),
+                items: <String>[
+                  'Stay hyderated',
+                  'Respect everyone',
+                  'Think positive',
+                  'Eat healthy',
+                  'Prioritize yourself',
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
             ),
             SizedBox(
               height: mediaQuery.size.height * 0.10,
@@ -91,35 +96,28 @@ class _DailyRemainderState extends State<DailyRemainder> {
               child: const Text('Or customize yourself'),
             ),
             TextField(
-              maxLines: null,
+              maxLines: 4,
               keyboardType: TextInputType.multiline,
-              style: const TextStyle(
-                fontSize: 16.0,
-                color: Colors.black,
-              ),
               decoration: InputDecoration(
+                fillColor: const Color(0xFFE3CF9C),
                 filled: true,
-                fillColor:
-                    const Color(0xFFE3CF9C), // Set the desired background color
+                hintText: 'Enter text',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                hintText: 'Enter your text...',
-                hintStyle: const TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black54,
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
               ),
             ),
             SizedBox(
-              height: mediaQuery.size.height * 0.15,
+              height: mediaQuery.size.height * 0.10,
             ),
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Success(message: 'Remainder Successfully\nupdated',),
+                    builder: (context) => const Success(
+                      message: 'Remainder Successfully\nupdated',
+                    ),
                   ),
                 );
               },

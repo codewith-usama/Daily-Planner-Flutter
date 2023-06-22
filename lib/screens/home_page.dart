@@ -3,7 +3,6 @@ import 'package:daily_planner/screens/create_task.dart';
 import 'package:daily_planner/screens/home_screen.dart';
 import 'package:daily_planner/screens/profile_page.dart';
 import 'package:flutter/material.dart';
-
 import '../utils/config.dart';
 
 class HomePage extends StatefulWidget {
