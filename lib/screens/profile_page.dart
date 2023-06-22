@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../components/profile_page_container.dart';
 import '../utils/config.dart';
+import 'daily_reminders.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -113,9 +114,19 @@ class _ProfilePageState extends State<ProfilePage> {
             SizedBox(
               height: mediaQuery.size.height * 0.05,
             ),
-            const ProfilePageContainer(
-              text: 'Daily Reminders',
-              color: Color(0xFFE3B8A0),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DailyReminder(),
+                  ),
+                );
+              },
+              child: const ProfilePageContainer(
+                text: 'Daily Reminders',
+                color: Color(0xFFE3B8A0),
+              ),
             ),
             SizedBox(
               height: mediaQuery.size.height * 0.03,

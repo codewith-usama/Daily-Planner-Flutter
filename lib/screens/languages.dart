@@ -62,6 +62,8 @@ class _LanguagesState extends State<Languages> {
             SizedBox(
               height: mediaQuery.size.height * 0.08,
             ),
+            // uncommenting below code causing issue, screen shows blank
+
             // Container(
             //   padding: EdgeInsets.symmetric(vertical: 8.0),
             //   child: Row(
