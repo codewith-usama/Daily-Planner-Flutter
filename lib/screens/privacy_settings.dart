@@ -44,7 +44,7 @@ class _PrivacySettingsState extends State<PrivacySettings> {
     return Scaffold(
       backgroundColor: homeScreenBackgroundColor,
       appBar: AppBar(
-        elevation: 1,
+        elevation: 0,
         backgroundColor: homeScreenBackgroundColor,
         leading: IconButton(
           icon: const Icon(

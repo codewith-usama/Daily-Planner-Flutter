@@ -53,6 +53,9 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const RememberMeCheckBox(
                 rememberMeMessage: 'Remember me',
+                fillColor: Color(0xFFD9D9D9),
+                checkColor: Colors.black,
+                textColor: Colors.white,
               ),
               SizedBox(
                 height: mediaQuery.size.height * 0.03,

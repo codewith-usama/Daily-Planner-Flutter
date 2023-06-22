@@ -3,9 +3,15 @@ import 'package:flutter/material.dart';
 class RememberMeCheckBox extends StatefulWidget {
   const RememberMeCheckBox({
     required this.rememberMeMessage,
+    required this.fillColor,
+    required this.checkColor,
+    required this.textColor,
     super.key,
   });
   final String rememberMeMessage;
+  final Color fillColor;
+  final Color checkColor;
+  final Color textColor;
 
   @override
   State<RememberMeCheckBox> createState() => _RememberMeCheckBoxState();
@@ -20,9 +26,9 @@ class _RememberMeCheckBoxState extends State<RememberMeCheckBox> {
       children: [
         Checkbox(
           fillColor: MaterialStateProperty.resolveWith(
-            (states) => const Color(0xFFD9D9D9),
+            (states) => widget.fillColor,
           ),
-          checkColor: Colors.black,
+          checkColor: widget.checkColor,
           value: rememberMe,
           onChanged: (newValue) {
             setState(() {
@@ -32,8 +38,8 @@ class _RememberMeCheckBoxState extends State<RememberMeCheckBox> {
         ),
         Text(
           widget.rememberMeMessage,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: widget.textColor,
           ),
         ),
       ],

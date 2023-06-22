@@ -25,7 +25,7 @@ class _LanguagesState extends State<Languages> {
     return Scaffold(
       backgroundColor: homeScreenBackgroundColor,
       appBar: AppBar(
-        elevation: 1,
+        elevation: 0,
         backgroundColor: homeScreenBackgroundColor,
         leading: IconButton(
           icon: const Icon(
@@ -45,7 +45,7 @@ class _LanguagesState extends State<Languages> {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: 10,
+          horizontal: mediaQuery.size.width * 0.20,
           vertical: mediaQuery.size.height * 0.08,
         ),
         child: Column(
@@ -62,33 +62,62 @@ class _LanguagesState extends State<Languages> {
             SizedBox(
               height: mediaQuery.size.height * 0.08,
             ),
-            // uncommenting below code causing issue, screen shows blank
+            languageRadioTile(
+              Language.english,
+              'English',
+              mediaQuery.size.height * 0.08,
+            ),
+            languageRadioTile(
+              Language.french,
+              'French',
+              mediaQuery.size.height * 0.08,
+            ),
+            languageRadioTile(
+              Language.spanish,
+              'Spanish',
+              mediaQuery.size.height * 0.08,
+            ),
+            languageRadioTile(
+              Language.german,
+              'German',
+              mediaQuery.size.height * 0.08,
+            ),
+            languageRadioTile(
+              Language.arabic,
+              'Arabic',
+              mediaQuery.size.height * 0.08,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
-            // Container(
-            //   padding: EdgeInsets.symmetric(vertical: 8.0),
-            //   child: Row(
-            //     children: [
-            //       Text('English'),
-
-            //       RadioListTile<Language>(
-            //         value: Language.english,
-            //         groupValue: _selectedLanguague,
-            //         onChanged: (Language? value) {
-            //           _handleGenderChange(value!);
-            //         },
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            RadioListTile<Language>(
-              value: Language.english,
+  Container languageRadioTile(
+      Language languageSelected, String language, double height) {
+    // ignore: sized_box_for_whitespace
+    return Container(
+      width: double.maxFinite,
+      height: height,
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Text(language),
+          ),
+          const SizedBox(
+            width: 30.0,
+          ),
+          Expanded(
+            child: RadioListTile<Language>(
+              value: languageSelected,
               groupValue: _selectedLanguague,
               onChanged: (Language? value) {
                 _handleGenderChange(value!);
               },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -1,16 +1,16 @@
-import 'package:daily_planner/screens/reminder_created.dart';
+import 'package:daily_planner/components/success.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/config.dart';
 
-class DailyReminder extends StatefulWidget {
-  const DailyReminder({super.key});
+class DailyRemainder extends StatefulWidget {
+  const DailyRemainder({super.key});
 
   @override
-  State<DailyReminder> createState() => _DailyReminderState();
+  State<DailyRemainder> createState() => _DailyRemainderState();
 }
 
-class _DailyReminderState extends State<DailyReminder> {
+class _DailyRemainderState extends State<DailyRemainder> {
   String _selectedOption = 'Select';
 
   @override
@@ -19,7 +19,7 @@ class _DailyReminderState extends State<DailyReminder> {
     return Scaffold(
       backgroundColor: homeScreenBackgroundColor,
       appBar: AppBar(
-        elevation: 1,
+        elevation: 0,
         backgroundColor: homeScreenBackgroundColor,
         leading: IconButton(
           icon: const Icon(
@@ -119,7 +119,7 @@ class _DailyReminderState extends State<DailyReminder> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ReminderCreated(),
+                    builder: (context) => const Success(message: 'Remainder Successfully\nupdated',),
                   ),
                 );
               },

@@ -26,53 +26,58 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    return Scaffold(
-      body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: bottomNavigationBarItemColor,
-              size: mediaQuery.size.width * 0.09,
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        body: _screens[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: bottomNavigationBarItemColor,
+                size: mediaQuery.size.width * 0.09,
+              ),
+              backgroundColor: const Color(0xFFE3B59C),
+              label: '',
             ),
-            backgroundColor: const Color(0xFFE3B59C),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.calendar_month_outlined,
-              color: bottomNavigationBarItemColor,
-              size: mediaQuery.size.width * 0.09,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.calendar_month_outlined,
+                color: bottomNavigationBarItemColor,
+                size: mediaQuery.size.width * 0.09,
+              ),
+              backgroundColor: const Color(0xFFE3B59C),
+              label: '',
             ),
-            backgroundColor: const Color(0xFFE3B59C),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.add,
-              color: bottomNavigationBarItemColor,
-              size: mediaQuery.size.width * 0.09,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add,
+                color: bottomNavigationBarItemColor,
+                size: mediaQuery.size.width * 0.09,
+              ),
+              backgroundColor: const Color(0xFFE3B59C),
+              label: '',
             ),
-            backgroundColor: const Color(0xFFE3B59C),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: bottomNavigationBarItemColor,
-              size: mediaQuery.size.width * 0.09,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                color: bottomNavigationBarItemColor,
+                size: mediaQuery.size.width * 0.09,
+              ),
+              backgroundColor: const Color(0xFFE3B59C),
+              label: '',
             ),
-            backgroundColor: const Color(0xFFE3B59C),
-            label: '',
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -232,7 +232,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   color: const Color(0xFFA1BFB2),
                                   width: mediaQuery.size.width * 0.85,
                                   height: mediaQuery.size.height * 0.10,
-                                  text: 'Read notes',
+                                  text: 'Clean room',
                                   imagePath: 'assets/plant_4.png',
                                   fontSize: fontSize * 0.06,
                                   horizontalPaddingValue: 50.0,
@@ -295,7 +295,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   imagePath: 'assets/plant_4.png',
                                   fontSize: fontSize * 0.05,
                                   horizontalPaddingValue:
-                                      mediaQuery.size.width * 0.01,
+                                      mediaQuery.size.width * 0.07,
                                 ),
                                 const SizedBox(
                                   height: 25.0,
@@ -308,7 +308,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   imagePath: 'assets/plant_4.png',
                                   fontSize: fontSize * 0.05,
                                   horizontalPaddingValue:
-                                      mediaQuery.size.width * 0.01,
+                                      mediaQuery.size.width * 0.05,
                                 ),
                               ],
                             ),

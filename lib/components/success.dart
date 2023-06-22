@@ -3,18 +3,24 @@ import 'package:daily_planner/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class ReminderCreated extends StatefulWidget {
-  const ReminderCreated({super.key});
+import '../utils/config.dart';
 
+class Success extends StatefulWidget {
+  const Success({
+    required this.message,
+    super.key,
+  });
+  final String message;
   @override
-  State<ReminderCreated> createState() => _ReminderCreatedState();
+  State<Success> createState() => _SuccessState();
 }
 
-class _ReminderCreatedState extends State<ReminderCreated> {
+class _SuccessState extends State<Success> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     return Scaffold(
+      backgroundColor: homeScreenBackgroundColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -30,10 +36,10 @@ class _ReminderCreatedState extends State<ReminderCreated> {
               Container(
                 width: double.infinity,
                 alignment: Alignment.center,
-                child: const Text(
-                  'Reminder Successfully\nupdated',
+                child: Text(
+                  widget.message,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF7B3400),
