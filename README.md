@@ -14,7 +14,17 @@ Key elements this app includes:
 -  Privacy settings access
 -  Setting daily Remainders
 
-<img src="![1](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/36f2ad1d-34c9-4531-a738-6bd9dabf07f2)" height="100" width="100">
+![1](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/6bd5d831-8bf6-4d6e-8c9a-42b6c8bb47de)
+![2](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/534e1db8-6be0-41ca-a2e2-dcc95694e9e9)
+![3](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/fcb569ba-b63c-4706-80f6-673b68e8e2de)
+![4](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/d1e7a588-5d68-4e6a-9e95-f2ede1477224)
+![5](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/82ffb077-0ad5-4470-98c8-3a5e3a3f7594)
+![6](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/196effa0-75e4-4818-8dd5-81de36a73b49)
+![7](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/267a660e-f605-49cf-bcaf-6f407df2f410)
+![8](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/ac567dbc-1725-4bd0-b519-ab9991a96188)
+![9](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/d7eb890c-ef1d-492f-ae78-9f6572aad066)
+![10](https://github.com/codewith-usama/Daily-Planner-Flutter/assets/99090844/bd60cc6b-7db7-4e6c-92b9-0aa9eea2f9dc)
+
 
 
 
